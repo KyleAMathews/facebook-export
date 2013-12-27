@@ -1,0 +1,28 @@
+{
+  "name": "facebook-export",
+  "version": "0.0.1",
+  "description": "Easily export data from Facebook groups",
+  "main": "app.coffee",
+  "dependencies": {
+    "commander": "~2.1.0",
+    "request": "~2.30.0",
+    "levelup": "~0.18.2",
+    "leveldown": "~0.10.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/KyleAMathews/facebook-export.git"
+  },
+  "keywords": [
+    "facebook"
+  ],
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KyleAMathews/facebook-export/issues"
+  }
+}
