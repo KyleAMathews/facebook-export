@@ -1,6 +1,6 @@
 {
   "name": "facebook-export",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Easily export data from Facebook groups",
   "main": "app.coffee",
   "dependencies": {
@@ -14,9 +14,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "coffee app.coffee"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": "node_modules/.bin/coffee app.coffee"
   "repository": {
     "type": "git",
     "url": "git://github.com/KyleAMathews/facebook-export.git"
