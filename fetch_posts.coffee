@@ -9,7 +9,7 @@ requestPosts = (url) ->
       # the token is wrong or Facebook's API is having trouble.
       process.exit()
     posts = JSON.parse body
-    console.log '# of posts retrieved', posts?.data?.length
+    console.log 'fetched', posts?.data?.length, 'posts'
     # If there's previous posts still, keep fetching.
     if posts.paging?.next?
       requestPosts(posts.paging.next)
