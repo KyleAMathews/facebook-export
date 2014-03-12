@@ -1,6 +1,5 @@
 moment = require('moment')
 config = require('./config')
-util = require('util')
 
 module.exports = (program) ->
   posts = []
@@ -20,5 +19,5 @@ module.exports = (program) ->
       console.log('LevelDB Error', err)
     )
     .on('close',  (err) ->
-      console.log util.inspect(posts, { depth: null })
+      console.log JSON.stringify(posts, null, 4)
     )
