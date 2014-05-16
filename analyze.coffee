@@ -8,7 +8,7 @@ listFetchedGroups = require './list_fetched_groups'
 calculateMemberActivity = require './calculate_member_activity'
 
 program
-  .version('0.0.9')
+  .version('0.0.10')
   .option('-g, --group_id [value]', 'Facebook group id')
   .option('-l, --list', 'List groups you\'ve synced with Facebook')
   .option('-a, --member-activity', 'Calculate an activity score for each group member')

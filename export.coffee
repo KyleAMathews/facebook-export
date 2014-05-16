@@ -13,7 +13,7 @@ mkdirp.sync(config.dataDir)
 
 # Parse arguments.
 program
-  .version('0.0.9')
+  .version('0.0.10')
   .option('-o, --oauthToken [value]', 'Facebook oauth token')
   .option('-g, --group_id [value]', 'Facebook group id')
   .option('-d, --download', 'Download posts from Facebook for a specific group_id')
