@@ -7,7 +7,6 @@ program = require('commander')
 fetchPosts = require('./fetch_posts')
 fetchMembers = require('./fetch_members')
 fetchGroups = require('./fetch_groups')
-writePosts = require('./write_posts')
 
 # Ensure our directory for storing data is setup.
 mkdirp.sync(config.dataDir)
@@ -19,9 +18,6 @@ program
   .option('-g, --group_id [value]', 'Facebook group id')
   .option('-d, --download', 'Download posts from Facebook for a specific group_id')
   .option('-l, --list', 'List groups you belong to on Facebook')
-  .option('-w, --write', 'write downloaded posts to stdout')
-  .option('-y, --year [value]', 'Only write to stdout posts created within a year', parseInt)
-  .option('-m, --month [value]', 'Only write to stdout posts created within a month (usually paired with a year). Jan = 1, Feb = 2, etc.', parseInt)
   .parse(process.argv)
 
 if program.list
@@ -29,7 +25,5 @@ if program.list
 else if program.download
   fetchPosts(program)
   fetchMembers(program)
-else if program.write
-  writePosts(program)
 else
   program.help()

@@ -14,13 +14,15 @@ module.exports = (program) ->
     else
       console.log ''
       console.log ''
+      console.log 'FACEBOOK GROUPS'
       groups = JSON.parse(body)
       sortedGroups = _.sortBy groups.data, (group) -> group['bookmark_order']
       for group in sortedGroups
-        console.log group.name
-        console.log "Group ID: #{ group.id }"
-        console.log ''
+        console.log "* #{group.name} [#{group.id}]"
 
         # Persist to DB
         config.groupsDb.put group.id, group
+
+      console.log ''
+      console.log ''
   )

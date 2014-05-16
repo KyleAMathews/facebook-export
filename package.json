@@ -17,7 +17,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "bin": "./bin.js",
+  "bin": {
+    "facebook-export": "./bin/export.js",
+    "facebook-analyze": "./bin/analyze.js"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/KyleAMathews/facebook-export.git"

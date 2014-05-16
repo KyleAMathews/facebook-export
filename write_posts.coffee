@@ -1,9 +1,11 @@
 moment = require('moment')
+levelup = require('levelup')
 config = require('./config')
 
 module.exports = (program) ->
   posts = []
-  config.postsDb.createReadStream()
+  postsDb = levelup(config.dataDir + '/group_' + program.group_id, { valueEncoding: 'json' })
+  postsDb.createReadStream()
     .on('data', (data) ->
       write = true
       if program.year?
