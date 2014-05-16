@@ -1,5 +1,10 @@
 request = require('request')
 config = require('./config')
+levelup = require('levelup')
+
+# Module globals.
+postsDb = {}
+group_id = ""
 
 requestPosts = (url) ->
   request(url, (error, response, body) ->
@@ -14,13 +19,20 @@ requestPosts = (url) ->
     if posts.paging?.next?
       requestPosts(posts.paging.next)
     for post in posts.data
-      config.postsDb.put(post.id, post)
+      postsDb.put(post.id, post)
   )
 
 module.exports = (program) ->
-  console.log "Starting Facebook Export…"
+  config.groupsDb.get(program.group_id, (err, group) ->
+    console.log ''
+    console.log "Exporting posts for group \"#{group.name}\""
+    console.log ''
+    console.log ''
+  )
   # Explicitly list fields so can set comment limits to 999 which should fetch
   # all comments in one pass.
-  url = "https://graph.facebook.com/#{ program.group_id }/feed?limit=500&access_token=#{ program.oauthToken }&
+  url = "https://graph.facebook.com/#{ program.group_id }/feed?limit=100&access_token=#{ program.oauthToken }&
 fields=from,to,message,picture,link,name,caption,description,created_time,updated_time,likes,comments.limit(999)"
+  postsDb = levelup(config.dataDir + '/group_' + program.group_id, { valueEncoding: 'json' })
+  group_id = program.group_id
   requestPosts(url)

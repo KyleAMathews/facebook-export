@@ -10,7 +10,8 @@
     "leveldown": "~0.10.2",
     "moment": "~2.5.0",
     "mkdirp": "~0.3.5",
-    "coffee-script": "~1.6.3"
+    "coffee-script": "~1.6.3",
+    "underscore": "~1.6.0"
   },
   "devDependencies": {},
   "scripts": {
