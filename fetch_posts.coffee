@@ -25,7 +25,7 @@ requestPosts = (url) ->
 module.exports = (program) ->
   config.groupsDb.get(program.group_id, (err, group) ->
     console.log ''
-    console.log "Exporting posts for group \"#{group.name}\""
+    console.log "Exporting posts and members list for group \"#{group.name}\""
     console.log ''
     console.log ''
   )

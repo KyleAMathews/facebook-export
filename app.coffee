@@ -5,6 +5,7 @@ mkdirp = require('mkdirp')
 program = require('commander')
 
 fetchPosts = require('./fetch_posts')
+fetchMembers = require('./fetch_members')
 fetchGroups = require('./fetch_groups')
 writePosts = require('./write_posts')
 
@@ -27,6 +28,7 @@ if program.list
   fetchGroups(program)
 else if program.download
   fetchPosts(program)
+  fetchMembers(program)
 else if program.write
   writePosts(program)
 else
