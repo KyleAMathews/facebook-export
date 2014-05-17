@@ -6,7 +6,7 @@ Export data from your timeline or groups you belong to
 [![NPM](https://nodei.co/npm/facebook-export.png?downloads=true)](https://nodei.co/npm/facebook-export/)
 
 ### Install
-This program comes with two executables — `facebook-export` which handles downloading and saving your information from Facebook and `facebook-analyze` which provides several ways for you to inspect and analyze your data.
+This program comes with two executables: `facebook-export` which handles downloading and saving your information from Facebook and `facebook-analyze` which provides several ways for you to inspect and analyze your data.
 
 To install:
 
@@ -26,11 +26,7 @@ There click on the "Get Access Token" button and make sure you check the "user_g
 
 ![screen shot 2014-05-16 at 4 46 06 pm](https://cloud.githubusercontent.com/assets/71047/3003502/5c0a3b24-dd54-11e3-8c2a-edd79035dfd0.png)
 
-Now return to your terminal.
-
-You need to know the Group ID of the group you wish to export data from.
-
-To see a list of all your groups and their Group IDs run:
+You need to know the Group ID of the group you wish to export data from. To see a list of all your groups and their Group IDs run:
 
 `facebook-export -o <YOUR-ACCESS-TOKEN> -l`
 
