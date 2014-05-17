@@ -4,6 +4,8 @@ _ = require 'underscore'
 moment = require 'moment'
 
 # What different activities are worth.
+# Points have a 1/2 life of six months. So if a member created a post
+# exactly six months ago, that action is now worth 2.5 points.
 COMMENT = 10
 LIKE = 1
 POST = 5
