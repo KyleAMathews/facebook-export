@@ -10,7 +10,7 @@ This program comes with two executables: `facebook-export` which handles downloa
 
 To install:
 
-First install node.js.
+First install [node.js](http://nodejs.org/).
 
 Then run in your terminal:
 
