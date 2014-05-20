@@ -8,7 +8,7 @@ calculateMemberActivity = require '../lib/calculate_member_activity'
 program = require('commander')
 
 program
-  .version('0.0.12')
+  .version('0.0.13')
   .option('-g, --group_id [value]', 'Facebook group id')
   .option('-l, --list', 'List groups you\'ve synced with Facebook')
   .option('-a, --member-activity', 'Calculate an activity score for each group member')

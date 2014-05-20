@@ -1,7 +1,7 @@
 facebook-export
 ===============
 
-Export data from your Facebok groups (export from your timeline coming).
+Export data from your Facebok groups.
 
 [![NPM](https://nodei.co/npm/facebook-export.png?downloads=true)](https://nodei.co/npm/facebook-export/)
 

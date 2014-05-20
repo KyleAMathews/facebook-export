@@ -1,6 +1,6 @@
 {
   "name": "facebook-export",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Easily export data from Facebook groups",
   "main": "app.coffee",
   "dependencies": {
