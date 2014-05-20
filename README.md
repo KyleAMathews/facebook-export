@@ -50,10 +50,15 @@ The downloaded information will be saved in LevelDB DBs at ~/.facebook-export
 Once you've saved your information locally, you'll probably want to have a look at it. You'll use the `facebook-analyze` command for this.
 
 To get a raw dump of the JSON encoded information from the API run:
+
 `facebook-analyze -g <GROUP-ID> -s`
 
 This will write all the group's posts to STDOUT.
 
-You can filter posts by the year and month they were created in. E.g. to grab all posts from 2013 and save them to a file run `facebook-analyze -g <GROUP-ID> -y 2013 -s >> posts_2013.json`
+You can filter posts by the year and month they were created in. E.g. to grab all posts from 2013 and save them to a file run:
 
-I've also added a script which calculates an activity score for each member of the group. Members get points when they post/comment/like. To emphasize more recent activity, points have a 1/2 life of six months. Generate the activity chart by running `facebook-analyze -g <GROUP-ID> -a`
+`facebook-analyze -g <GROUP-ID> -y 2013 -s >> posts_2013.json`
+
+I've also added a script which calculates an activity score for each member of the group. Members get points when they post/comment/like. To emphasize more recent activity, points have a 1/2 life of six months. Generate the activity chart by running:
+
+`facebook-analyze -g <GROUP-ID> -a`
