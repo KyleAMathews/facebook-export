@@ -1,5 +1,5 @@
+config = require('../config')
 request = require('request')
-config = require('./config')
 levelup = require('levelup')
 
 # Module globals.

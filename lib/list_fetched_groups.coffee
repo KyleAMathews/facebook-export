@@ -1,5 +1,5 @@
+config = require '../config'
 fs = require 'fs'
-config = require './config'
 
 module.exports = ->
   directories = fs.readdirSync(config.dataDir).filter (directory) ->

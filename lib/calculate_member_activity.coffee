@@ -1,4 +1,4 @@
-config = require('./config')
+config = require('../config')
 levelup = require('levelup')
 _ = require 'underscore'
 moment = require 'moment'

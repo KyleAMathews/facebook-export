@@ -1,14 +1,14 @@
 #!/usr/bin/env coffee
 
-config = require('./config')
+config = require('../config')
+writePosts = require('../lib/write_posts_stdout')
+listFetchedGroups = require '../lib/list_fetched_groups'
+calculateMemberActivity = require '../lib/calculate_member_activity'
+
 program = require('commander')
 
-writePosts = require('./write_posts')
-listFetchedGroups = require './list_fetched_groups'
-calculateMemberActivity = require './calculate_member_activity'
-
 program
-  .version('0.0.10')
+  .version('0.0.12')
   .option('-g, --group_id [value]', 'Facebook group id')
   .option('-l, --list', 'List groups you\'ve synced with Facebook')
   .option('-a, --member-activity', 'Calculate an activity score for each group member')

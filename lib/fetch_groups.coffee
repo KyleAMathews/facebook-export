@@ -1,6 +1,6 @@
+config = require('../config')
 request = require('request')
 _ = require 'underscore'
-config = require('./config')
 levelup = require('levelup')
 
 module.exports = (program) ->

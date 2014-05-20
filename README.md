@@ -28,7 +28,7 @@ There click on the "Get Access Token" button and make sure you check the "user_g
 
 You need to know the Group ID of the group you wish to export data from. To see a list of all your groups and their Group IDs run:
 
-`facebook-export -o <YOUR-ACCESS-TOKEN> -l`
+`facebook-export -a <YOUR-ACCESS-TOKEN> -l`
 
 This should return a list something like:
 
@@ -42,7 +42,7 @@ FACEBOOK GROUPS
 
 To export the information (posts and members) for one of these groups run:
 
-`facebook-export -o <ACCESS-TOKEN> -g <GROUP-ID> -d`
+`facebook-export -a <ACCESS-TOKEN> -g <GROUP-ID> -d`
 
 The downloaded information will be saved in LevelDB DBs at ~/.facebook-export
 

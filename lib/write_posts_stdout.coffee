@@ -1,6 +1,6 @@
+config = require('../config')
 moment = require('moment')
 levelup = require('levelup')
-config = require('./config')
 
 module.exports = (program) ->
   posts = []
