@@ -8,12 +8,18 @@ group_id = ""
 
 requestPosts = (url) ->
   request(url, (error, response, body) ->
+    posts = JSON.parse body
     if error
       console.log error
       # Shut everything down if there's an error. Almost certainly it means
       # the token is wrong or Facebook's API is having trouble.
       process.exit()
-    posts = JSON.parse body
+    else if "error" in posts
+      console.log posts.error
+      # Shut everything down if there's an error. Almost certainly it means
+      # the token is wrong or Facebook's API is having trouble.
+      process.exit()
+
     console.log 'fetched', posts?.data?.length, 'posts'
     # If there's previous posts still, keep fetching.
     if posts.paging?.next?

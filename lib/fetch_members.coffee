@@ -8,12 +8,17 @@ group_id = ""
 
 requestMembers = (url) ->
   request(url, (error, response, body) ->
+    members = JSON.parse body
     if error
       console.log error
       # Shut everything down if there's an error. Almost certainly it means
       # the token is wrong or Facebook's API is having trouble.
       process.exit()
-    members = JSON.parse body
+    else if "error" of members
+      console.log members.error
+      # Shut everything down if there's an error. Almost certainly it means
+      # the token is wrong or Facebook's API is having trouble.
+      process.exit()
     for member in members.data
       membersDb.put(member.id, member)
   )
