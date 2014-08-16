@@ -4,7 +4,7 @@ _ = require 'underscore'
 levelup = require('levelup')
 
 module.exports = (program) ->
-  url = "https://graph.facebook.com/me/groups?access_token=#{ program.oauthToken }"
+  url = "https://graph.facebook.com/me/groups?access_token=#{ program.accessToken }"
   request(url, (error, response, body) ->
     body = JSON.parse(body)
     if error

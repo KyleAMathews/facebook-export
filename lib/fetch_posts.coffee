@@ -37,7 +37,7 @@ module.exports = (program) ->
   )
   # Explicitly list fields so can set comment limits to 999 which should fetch
   # all comments in one pass.
-  url = "https://graph.facebook.com/#{ program.group_id }/feed?limit=100&access_token=#{ program.oauthToken }&
+  url = "https://graph.facebook.com/#{ program.group_id }/feed?limit=100&access_token=#{ program.accessToken }&
 fields=from,to,message,picture,link,name,caption,description,created_time,updated_time,likes,comments.limit(999)"
   postsDb = levelup(config.dataDir + '/group_' + program.group_id, { valueEncoding: 'json' })
   group_id = program.group_id
