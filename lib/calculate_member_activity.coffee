@@ -35,7 +35,7 @@ module.exports = (program) ->
           decay = 1 / Math.pow(2, (days_old / SIX_MONTHS))
 
           # Add points to the poster.
-          poster = _.find members, (member) -> member.id is post.from.id
+          poster = _.find members, (member) -> member.id is post.from?.id
           if poster?
             poster.points += POST * decay
 
@@ -49,7 +49,7 @@ module.exports = (program) ->
           # Add points for comments.
           if post.comments?
             for comment in post.comments.data
-              commenter = _.find members, (member) -> member.id is comment.from.id
+              commenter = _.find members, (member) -> member.id is comment.from?.id
               if commenter?
                 commenter.points += COMMENT * decay
         )
