@@ -16,13 +16,14 @@ program
   .version('0.0.13')
   .option('-a, --accessToken [value]', 'Facebook access token')
   .option('-g, --group_id [value]', 'Facebook group id')
-  .option('-d, --download', 'Download posts from Facebook for a specific group_id')
+  .option('-d, --download', 'Download posts from Facebook for the specified group_id')
+  .option('-s, --download-since [value]', 'Download posts from Facebook for the specified group_id since a unix timestamp e.g. --download-since 1408320000')
   .option('-l, --list', 'List groups you belong to on Facebook')
   .parse(process.argv)
 
 if program.list
   fetchGroups(program)
-else if program.download
+else if program.download or program.downloadSince
   fetchPosts(program)
   fetchMembers(program)
 else
