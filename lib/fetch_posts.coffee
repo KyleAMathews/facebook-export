@@ -60,13 +60,14 @@ fields=from,to,message,picture,link,name,caption,description,created_time,update
   else
     url += "&until=#{untilTime}"
 
-  unless since?
+  if since?
+    url += "&since=#{since}"
+  else
     if program.downloadSince?
       url += "&since=#{program.downloadSince}"
+    # Nothing is indicated, set since to the beginning of (UNIX) time.
     else
-      url += "&since=#{moment.unix(untilTime).subtract(1, 'months').unix()}"
-  else
-    url += "&since=#{since}"
+      url += "&since=0"
 
   return url
 
