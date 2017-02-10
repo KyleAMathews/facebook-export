@@ -15,6 +15,7 @@ sortedUpdated = (posts) ->
 requestPosts = (url) ->
   request(url, (error, response, body) ->
     posts = JSON.parse body
+
     if error
       console.log error
       # Shut everything down if there's an error. Almost certainly it means
@@ -49,10 +50,10 @@ requestPosts = (url) ->
   )
 
 getURL = (since = null, untilTime = null) ->
-  # Explicitly list fields so can set comment limits to 999 which should fetch
-  # all comments in one pass.
-  url = "https://graph.facebook.com/#{ program.group_id }/feed?limit=100&access_token=#{ program.accessToken }&
-fields=from,to,message,picture,link,name,caption,description,created_time,updated_time,likes,comments.limit(999)"
+  # changed url and api version below
+  # response now returns replies and replies to replies
+  url = "https://graph.facebook.com/v2.7/#{ program.group_id }/feed?limit=100&access_token=#{ program.accessToken }&
+fields=from,to,message,picture,link,name,caption,description,created_time,updated_time,likes,comments{from,to,message,link,name,caption,description,created_time,updated_time,like_count,comments{from,to,message,link,name,caption,description,created_time,updated_time,like_count}}"
 
   unless untilTime?
     url += "&until=#{moment().unix()}"
